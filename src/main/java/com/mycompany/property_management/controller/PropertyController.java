@@ -68,6 +68,7 @@ class PropertyController {
     @PatchMapping("/properties/update-price/{propertyId}")
     public ResponseEntity<PropertyDTO> updatePropertyPrice(@RequestBody PropertyDTO propertyDTO,
             @PathVariable Long propertyId) {
+        System.out.println(dummy);
         propertyDTO = propertyService.updatePriceOfProperty(propertyDTO, propertyId);
         ResponseEntity<PropertyDTO> responseEntity = new ResponseEntity<>(propertyDTO, HttpStatus.CREATED);
         return responseEntity;
