@@ -54,8 +54,8 @@ public class PropertyServiceImpl implements PropertyService {
             entity.setTitle(propertyDTO.getTitle());
             entity.setDescription(propertyDTO.getDescription());
             entity.setAddress(propertyDTO.getAddress());
-            entity.setOwnerName(propertyDTO.getOwnerName());
-            entity.setOwnerEmail(propertyDTO.getOwnerEmail());
+            // entity.setOwnerName(propertyDTO.getOwnerName());
+            // entity.setOwnerEmail(propertyDTO.getOwnerEmail());
             entity.setPrice(propertyDTO.getPrice());
             propertyRepository.save(entity);
 
