@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.mycompany.property_management.dto.UserDTO;
 import com.mycompany.property_management.service.UserService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/api/v1/user")
 public class UserController {
@@ -19,7 +21,7 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("register")
-    public ResponseEntity<UserDTO> register(@RequestBody UserDTO userDto) {
+    public ResponseEntity<UserDTO> register(@Valid @RequestBody UserDTO userDto) {
         userDto = userService.register(userDto);
         return new ResponseEntity<>(userDto, HttpStatus.CREATED);
     }
@@ -30,6 +32,6 @@ public class UserController {
         return new ResponseEntity<>(userDto, HttpStatus.OK);
     }
 
-    // Aspect OrientedProgramming is a way of programmingwhich helps 
+    // Aspect OrientedProgramming is a way of programmingwhich helps
     // us take out the commonfunctionalities, and put it in oneplace.
 }
