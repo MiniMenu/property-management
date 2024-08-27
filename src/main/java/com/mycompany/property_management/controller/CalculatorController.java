@@ -51,19 +51,15 @@ public class CalculatorController {
 
     /*
      * http://localhost:8080/api/v1/calculator/multiply
-     * {
+     * 
      * "num1":3.0,
      * "num2":4.0
-     * }
+     * 
      */
     @PostMapping("/multiply")
     public ResponseEntity<Double> multiply(@RequestBody CalculatorDTO calculatorDTO) {
         Double result = null;
         result = calculatorDTO.getNum1() * calculatorDTO.getNum2() * calculatorDTO.getNum3();
-        ResponseEntity<Double> responseEntity = new ResponseEntity<Double>(result, HttpStatus.CREATED); // Can send two
-                                                                                                        // items to the
-                                                                                                        // client from
-                                                                                                  // server
-        return responseEntity;
+        return new ResponseEntity<>(result, HttpStatus.CREATED); // Can send two
     }
 }
