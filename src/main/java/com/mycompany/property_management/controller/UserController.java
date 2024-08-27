@@ -21,7 +21,15 @@ public class UserController {
     @PostMapping("register")
     public ResponseEntity<UserDTO> register(@RequestBody UserDTO userDto) {
         userDto = userService.register(userDto);
-        ResponseEntity<UserDTO> responseEntity = new ResponseEntity<>(userDto, HttpStatus.CREATED);
-        return responseEntity;
+        return new ResponseEntity<>(userDto, HttpStatus.CREATED);
     }
+
+    @PostMapping("login")
+    public ResponseEntity<UserDTO> login(@RequestBody UserDTO userDto) {
+        userDto = userService.login(userDto.getOwnerEmail(), userDto.getPassword());
+        return new ResponseEntity<>(userDto, HttpStatus.OK);
+    }
+
+    // Aspect OrientedProgramming is a way of programmingwhich helps 
+    // us take out the commonfunctionalities, and put it in oneplace.
 }
