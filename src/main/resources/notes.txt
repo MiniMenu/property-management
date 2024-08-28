@@ -3,3 +3,9 @@ Documentation
 http://localhost:8080/api-docs
 http://localhost:8080/swagger-ui/index.html#/
 https://docs.spring.io/spring-boot/reference/actuator/endpoints.html
+
+For * -> 1 relationship - default fetch type is FetchType.EAGER
+For * -> * relationship - default fetch type is FetchType.LAZY
+
+FetchType.EAGER - while getting parent data also get child entity data
+FetchType.LAZY - while getting parent data do not get child entity data
